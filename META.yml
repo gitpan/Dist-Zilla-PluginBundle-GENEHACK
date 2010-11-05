@@ -16,6 +16,17 @@ meta-spec:
 name: Dist-Zilla-PluginBundle-GENEHACK
 requires:
   Dist::Zilla: 0
+  Dist::Zilla::Plugin::ArchiveRelease: 0
+  Dist::Zilla::Plugin::AutoPrereqs: 0
+  Dist::Zilla::Plugin::CriticTests: 0
+  Dist::Zilla::Plugin::ExtraTests: 0
+  Dist::Zilla::Plugin::Git::NextVersion: 0
+  Dist::Zilla::Plugin::MetaConfig: 0
+  Dist::Zilla::Plugin::MetaJSON: 0
+  Dist::Zilla::Plugin::PodCoverageTests: 0
+  Dist::Zilla::Plugin::PodSyntaxTests: 0
+  Dist::Zilla::Plugin::PodWeaver: 0
+  Dist::Zilla::Plugin::Repository: 0
   Dist::Zilla::PluginBundle::Basic: 0
   Dist::Zilla::PluginBundle::Git: 0
   Dist::Zilla::Role::PluginBundle::Easy: 0
@@ -23,7 +34,7 @@ requires:
   namespace::autoclean: 0
 resources:
   repository: https://github.com/genehack/dist-zilla-pluginbundle-genehack.git
-version: 0.01
+version: 0.02
 x_Dist_Zilla:
   plugins:
     -
@@ -161,5 +172,5 @@ x_Dist_Zilla:
   zilla:
     class: Dist::Zilla::Dist::Builder
     config:
-      is_trial: 1
+      is_trial: 0
     version: 4.102342
