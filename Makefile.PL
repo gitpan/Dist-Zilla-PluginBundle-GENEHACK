@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-
+BEGIN { require 5.006; }
 
 use ExtUtils::MakeMaker 6.31;
 
@@ -12,7 +12,8 @@ my %WriteMakefileArgs = (
   'ABSTRACT' => 'BeLike::GENEHACK when you zilla your dist',
   'AUTHOR' => 'John SJ Anderson <genehack@genehack.org>',
   'BUILD_REQUIRES' => {
-    'English' => '0',
+    'File::Find' => '0',
+    'File::Temp' => '0',
     'Test::More' => '0'
   },
   'CONFIGURE_REQUIRES' => {
@@ -25,23 +26,34 @@ my %WriteMakefileArgs = (
   'PREREQ_PM' => {
     'Dist::Zilla' => '0',
     'Dist::Zilla::Plugin::ArchiveRelease' => '0',
+    'Dist::Zilla::Plugin::Authority' => '0',
     'Dist::Zilla::Plugin::AutoPrereqs' => '0',
-    'Dist::Zilla::Plugin::CriticTests' => '0',
+    'Dist::Zilla::Plugin::Bugtracker' => '0',
+    'Dist::Zilla::Plugin::CompileTests' => '0',
+    'Dist::Zilla::Plugin::EOLTests' => '0',
     'Dist::Zilla::Plugin::ExtraTests' => '0',
     'Dist::Zilla::Plugin::Git::NextVersion' => '0',
+    'Dist::Zilla::Plugin::GitFmtChanges' => '0',
+    'Dist::Zilla::Plugin::Homepage' => '0',
+    'Dist::Zilla::Plugin::InstallGuide' => '0',
+    'Dist::Zilla::Plugin::KwaliteeTests' => '0',
     'Dist::Zilla::Plugin::MetaConfig' => '0',
     'Dist::Zilla::Plugin::MetaJSON' => '0',
+    'Dist::Zilla::Plugin::MinimumPerl' => '0',
+    'Dist::Zilla::Plugin::PkgVersion' => '0',
     'Dist::Zilla::Plugin::PodCoverageTests' => '0',
     'Dist::Zilla::Plugin::PodSyntaxTests' => '0',
     'Dist::Zilla::Plugin::PodWeaver' => '0',
+    'Dist::Zilla::Plugin::ReadmeFromPod' => '0',
     'Dist::Zilla::Plugin::Repository' => '0',
+    'Dist::Zilla::Plugin::Twitter' => '0',
     'Dist::Zilla::PluginBundle::Basic' => '0',
     'Dist::Zilla::PluginBundle::Git' => '0',
     'Dist::Zilla::Role::PluginBundle::Easy' => '0',
     'Moose' => '0',
     'namespace::autoclean' => '0'
   },
-  'VERSION' => '0.02',
+  'VERSION' => '0.03',
   'test' => {
     'TESTS' => 't/*.t'
   }
