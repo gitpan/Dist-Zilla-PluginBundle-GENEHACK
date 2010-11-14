@@ -1,5 +1,3 @@
-CHANGES
-INSTALL
 LICENSE
 MANIFEST
 META.json
@@ -8,8 +6,6 @@ Makefile.PL
 README
 dist.ini
 lib/Dist/Zilla/PluginBundle/GENEHACK.pm
-t/00-compile.t
-t/release-eol.t
-t/release-kwalitee.t
+t/author-critic.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t

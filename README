@@ -1,51 +1,13 @@
-NAME
-    Dist::Zilla::PluginBundle::GENEHACK - BeLike::GENEHACK when you zilla
-    your dist
 
-VERSION
-    version 0.03
 
-SYNOPSIS
-    Loads the stuff I find myself using all the time. Currently equivalent
-    to this:
+This archive contains the distribution Dist-Zilla-PluginBundle-GENEHACK,
+version 0.04:
 
-        [@Git]
-        [Git::NextVersion]
-        first_version = 0.01
+  BeLike::GENEHACK when you zilla your dist
 
-        [@Basic]
+This software is copyright (c) 2010 by John SJ Anderson.
 
-        [AutoPrereqs]
-        [Authority]
-        authority = 'cpan:GENEHACK'
-        do_metadata = 1
-        [MinimumPerl]
-        [PkgVersion]
-        [PodWeaver]
-        [Bugtracker]
-        [Homepage]
-        [MetaConfig]
-        [MetaJSON]
-        [Repository]
-        github_http = 0
-        [GitFmtChanges]
-        [InstallGuide]
-        [ReadmeFromPod]
-        [ExtraTests]
-        [PodCoverageTests]
-        [PodSyntaxTests]
-        [CompileTests]
-        [EOLTests]
-        [KwaliteeTests]
-        [Twitter]
-        [ArchiveRelease]
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
-AUTHOR
-    John SJ Anderson <genehack@genehack.org>
-
-COPYRIGHT AND LICENSE
-    This software is copyright (c) 2010 by John SJ Anderson.
-
-    This is free software; you can redistribute it and/or modify it under
-    the same terms as the Perl 5 programming language system itself.
 

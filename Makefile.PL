@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-BEGIN { require 5.006; }
+
 
 use ExtUtils::MakeMaker 6.31;
 
@@ -12,8 +12,7 @@ my %WriteMakefileArgs = (
   'ABSTRACT' => 'BeLike::GENEHACK when you zilla your dist',
   'AUTHOR' => 'John SJ Anderson <genehack@genehack.org>',
   'BUILD_REQUIRES' => {
-    'File::Find' => '0',
-    'File::Temp' => '0',
+    'English' => '0',
     'Test::More' => '0'
   },
   'CONFIGURE_REQUIRES' => {
@@ -36,6 +35,7 @@ my %WriteMakefileArgs = (
     'Dist::Zilla::Plugin::GitFmtChanges' => '0',
     'Dist::Zilla::Plugin::Homepage' => '0',
     'Dist::Zilla::Plugin::InstallGuide' => '0',
+    'Dist::Zilla::Plugin::InstallRelease' => '0',
     'Dist::Zilla::Plugin::KwaliteeTests' => '0',
     'Dist::Zilla::Plugin::MetaConfig' => '0',
     'Dist::Zilla::Plugin::MetaJSON' => '0',
@@ -53,7 +53,7 @@ my %WriteMakefileArgs = (
     'Moose' => '0',
     'namespace::autoclean' => '0'
   },
-  'VERSION' => '0.03',
+  'VERSION' => '0.04',
   'test' => {
     'TESTS' => 't/*.t'
   }
