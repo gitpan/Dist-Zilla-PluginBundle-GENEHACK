@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-
+BEGIN { require 5.006; }
 
 use ExtUtils::MakeMaker 6.31;
 
@@ -12,7 +12,8 @@ my %WriteMakefileArgs = (
   'ABSTRACT' => 'BeLike::GENEHACK when you zilla your dist',
   'AUTHOR' => 'John SJ Anderson <genehack@genehack.org>',
   'BUILD_REQUIRES' => {
-    'English' => '0',
+    'File::Find' => '0',
+    'File::Temp' => '0',
     'Test::More' => '0'
   },
   'CONFIGURE_REQUIRES' => {
@@ -32,7 +33,6 @@ my %WriteMakefileArgs = (
     'Dist::Zilla::Plugin::EOLTests' => '0',
     'Dist::Zilla::Plugin::ExtraTests' => '0',
     'Dist::Zilla::Plugin::Git::NextVersion' => '0',
-    'Dist::Zilla::Plugin::GitFmtChanges' => '0',
     'Dist::Zilla::Plugin::Homepage' => '0',
     'Dist::Zilla::Plugin::InstallGuide' => '0',
     'Dist::Zilla::Plugin::InstallRelease' => '0',
@@ -40,6 +40,7 @@ my %WriteMakefileArgs = (
     'Dist::Zilla::Plugin::MetaConfig' => '0',
     'Dist::Zilla::Plugin::MetaJSON' => '0',
     'Dist::Zilla::Plugin::MinimumPerl' => '0',
+    'Dist::Zilla::Plugin::NextRelease' => '0',
     'Dist::Zilla::Plugin::PkgVersion' => '0',
     'Dist::Zilla::Plugin::PodCoverageTests' => '0',
     'Dist::Zilla::Plugin::PodSyntaxTests' => '0',
@@ -53,7 +54,7 @@ my %WriteMakefileArgs = (
     'Moose' => '0',
     'namespace::autoclean' => '0'
   },
-  'VERSION' => '0.04',
+  'VERSION' => '0.1',
   'test' => {
     'TESTS' => 't/*.t'
   }
