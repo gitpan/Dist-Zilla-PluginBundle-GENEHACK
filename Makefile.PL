@@ -2,9 +2,9 @@
 use strict;
 use warnings;
 
-BEGIN { require 5.006; }
+use 5.006;
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
@@ -17,7 +17,7 @@ my %WriteMakefileArgs = (
     'Test::More' => '0'
   },
   'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+    'ExtUtils::MakeMaker' => '6.30'
   },
   'DISTNAME' => 'Dist-Zilla-PluginBundle-GENEHACK',
   'EXE_FILES' => [],
@@ -29,10 +29,12 @@ my %WriteMakefileArgs = (
     'Dist::Zilla::Plugin::Authority' => '0',
     'Dist::Zilla::Plugin::AutoPrereqs' => '0',
     'Dist::Zilla::Plugin::Bugtracker' => '0',
+    'Dist::Zilla::Plugin::CheckChangesHasContent' => '0',
     'Dist::Zilla::Plugin::CompileTests' => '0',
     'Dist::Zilla::Plugin::EOLTests' => '0',
     'Dist::Zilla::Plugin::ExtraTests' => '0',
     'Dist::Zilla::Plugin::Git::NextVersion' => '0',
+    'Dist::Zilla::Plugin::GithubMeta' => '0',
     'Dist::Zilla::Plugin::Homepage' => '0',
     'Dist::Zilla::Plugin::InstallGuide' => '0',
     'Dist::Zilla::Plugin::InstallRelease' => '0',
@@ -47,14 +49,16 @@ my %WriteMakefileArgs = (
     'Dist::Zilla::Plugin::PodWeaver' => '0',
     'Dist::Zilla::Plugin::ReadmeFromPod' => '0',
     'Dist::Zilla::Plugin::Repository' => '0',
+    'Dist::Zilla::Plugin::TaskWeaver' => '0',
     'Dist::Zilla::Plugin::Twitter' => '0',
     'Dist::Zilla::PluginBundle::Basic' => '0',
     'Dist::Zilla::PluginBundle::Git' => '0',
     'Dist::Zilla::Role::PluginBundle::Easy' => '0',
     'Moose' => '0',
+    'Pod::Elemental::Transformer::List' => '0',
     'namespace::autoclean' => '0'
   },
-  'VERSION' => '0.1',
+  'VERSION' => '0.2',
   'test' => {
     'TESTS' => 't/*.t'
   }

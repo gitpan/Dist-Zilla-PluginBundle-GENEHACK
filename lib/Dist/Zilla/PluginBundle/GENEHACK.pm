@@ -1,6 +1,6 @@
 package Dist::Zilla::PluginBundle::GENEHACK;
 BEGIN {
-  $Dist::Zilla::PluginBundle::GENEHACK::VERSION = '0.1';
+  $Dist::Zilla::PluginBundle::GENEHACK::VERSION = '0.2';
 }
 BEGIN {
   $Dist::Zilla::PluginBundle::GENEHACK::AUTHORITY = 'cpan:GENEHACK';
@@ -20,10 +20,12 @@ use Dist::Zilla::Plugin::ArchiveRelease;
 use Dist::Zilla::Plugin::Authority;
 use Dist::Zilla::Plugin::AutoPrereqs;
 use Dist::Zilla::Plugin::Bugtracker;
+use Dist::Zilla::Plugin::CheckChangesHasContent;
 use Dist::Zilla::Plugin::CompileTests;
 use Dist::Zilla::Plugin::EOLTests;
 use Dist::Zilla::Plugin::ExtraTests;
 use Dist::Zilla::Plugin::Git::NextVersion;
+use Dist::Zilla::Plugin::GithubMeta;
 use Dist::Zilla::Plugin::Homepage;
 use Dist::Zilla::Plugin::InstallGuide;
 use Dist::Zilla::Plugin::InstallRelease;
@@ -38,7 +40,15 @@ use Dist::Zilla::Plugin::PodSyntaxTests;
 use Dist::Zilla::Plugin::PodWeaver;
 use Dist::Zilla::Plugin::ReadmeFromPod;
 use Dist::Zilla::Plugin::Repository;
+use Dist::Zilla::Plugin::TaskWeaver;
 use Dist::Zilla::Plugin::Twitter;
+
+has is_task => (
+  is      => 'ro',
+  isa     => 'Bool',
+  lazy    => 1,
+  default => sub { $_[0]->payload->{task} },
+);
 
 sub configure {
   my $self = shift;
@@ -74,11 +84,11 @@ sub configure {
 
     # include $VERSION in all files
     'PkgVersion',
-
-    # weave together POD bits
-    'PodWeaver' ,
-
   );
+
+  # weave together POD bits or build a task module
+  if ($self->is_task) { $self->add_plugins('TaskWeaver') }
+  else {                $self->add_plugins('PodWeaver')  }
 
   ## PLUGINS WHAT MUNGE META.* FILES
   $self->add_plugins(
@@ -155,7 +165,7 @@ Dist::Zilla::PluginBundle::GENEHACK - BeLike::GENEHACK when you zilla your dist
 
 =head1 VERSION
 
-version 0.1
+version 0.2
 
 =head1 SYNOPSIS
 
@@ -180,6 +190,7 @@ this:
     [Homepage]
     [MetaConfig]
     [MetaJSON]
+    [GithubMeta]
     [Repository]
     github_http = 0
     [InstallGuide]

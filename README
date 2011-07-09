@@ -3,7 +3,7 @@ NAME
     your dist
 
 VERSION
-    version 0.1
+    version 0.2
 
 SYNOPSIS
     Loads the stuff I find myself using all the time. Currently equivalent
@@ -27,6 +27,7 @@ SYNOPSIS
         [Homepage]
         [MetaConfig]
         [MetaJSON]
+        [GithubMeta]
         [Repository]
         github_http = 0
         [InstallGuide]
