@@ -1,6 +1,6 @@
 package Dist::Zilla::PluginBundle::GENEHACK;
-BEGIN {
-  $Dist::Zilla::PluginBundle::GENEHACK::VERSION = '0.2';
+{
+  $Dist::Zilla::PluginBundle::GENEHACK::VERSION = '0.3';
 }
 BEGIN {
   $Dist::Zilla::PluginBundle::GENEHACK::AUTHORITY = 'cpan:GENEHACK';
@@ -21,7 +21,6 @@ use Dist::Zilla::Plugin::Authority;
 use Dist::Zilla::Plugin::AutoPrereqs;
 use Dist::Zilla::Plugin::Bugtracker;
 use Dist::Zilla::Plugin::CheckChangesHasContent;
-use Dist::Zilla::Plugin::CompileTests;
 use Dist::Zilla::Plugin::EOLTests;
 use Dist::Zilla::Plugin::ExtraTests;
 use Dist::Zilla::Plugin::Git::NextVersion;
@@ -29,7 +28,6 @@ use Dist::Zilla::Plugin::GithubMeta;
 use Dist::Zilla::Plugin::Homepage;
 use Dist::Zilla::Plugin::InstallGuide;
 use Dist::Zilla::Plugin::InstallRelease;
-use Dist::Zilla::Plugin::KwaliteeTests;
 use Dist::Zilla::Plugin::MetaConfig;
 use Dist::Zilla::Plugin::MetaJSON;
 use Dist::Zilla::Plugin::MinimumPerl;
@@ -41,6 +39,8 @@ use Dist::Zilla::Plugin::PodWeaver;
 use Dist::Zilla::Plugin::ReadmeFromPod;
 use Dist::Zilla::Plugin::Repository;
 use Dist::Zilla::Plugin::TaskWeaver;
+use Dist::Zilla::Plugin::Test::Compile;
+use Dist::Zilla::Plugin::Test::Kwalitee;
 use Dist::Zilla::Plugin::Twitter;
 
 has is_task => (
@@ -133,9 +133,9 @@ sub configure {
     'PodSyntaxTests' ,
 
     # oh, so very good
-    'CompileTests' ,
     'EOLTests' ,
-    'KwaliteeTests' ,
+    'Test::Compile' ,
+    'Test::Kwalitee' ,
   );
 
   ## PLUGINS WHAT DO STUFF
@@ -165,7 +165,7 @@ Dist::Zilla::PluginBundle::GENEHACK - BeLike::GENEHACK when you zilla your dist
 
 =head1 VERSION
 
-version 0.2
+version 0.3
 
 =head1 SYNOPSIS
 
@@ -198,9 +198,9 @@ this:
     [ExtraTests]
     [PodCoverageTests]
     [PodSyntaxTests]
-    [CompileTests]
     [EOLTests]
-    [KwaliteeTests]
+    [Test::Compile]
+    [Test::Kwalitee]
     [Twitter]
     [ArchiveRelease]
     [InstallRelease]

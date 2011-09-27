@@ -3,7 +3,7 @@ NAME
     your dist
 
 VERSION
-    version 0.2
+    version 0.3
 
 SYNOPSIS
     Loads the stuff I find myself using all the time. Currently equivalent
@@ -35,9 +35,9 @@ SYNOPSIS
         [ExtraTests]
         [PodCoverageTests]
         [PodSyntaxTests]
-        [CompileTests]
         [EOLTests]
-        [KwaliteeTests]
+        [Test::Compile]
+        [Test::Kwalitee]
         [Twitter]
         [ArchiveRelease]
         [InstallRelease]
