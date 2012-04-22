@@ -47,7 +47,7 @@ my %WriteMakefileArgs = (
     "Dist::Zilla::Plugin::PodCoverageTests" => 0,
     "Dist::Zilla::Plugin::PodSyntaxTests" => 0,
     "Dist::Zilla::Plugin::PodWeaver" => 0,
-    "Dist::Zilla::Plugin::ReadmeFromPod" => 0,
+    "Dist::Zilla::Plugin::ReadmeMarkdownFromPod" => 0,
     "Dist::Zilla::Plugin::Repository" => 0,
     "Dist::Zilla::Plugin::TaskWeaver" => 0,
     "Dist::Zilla::Plugin::Test::Compile" => 0,
@@ -60,7 +60,7 @@ my %WriteMakefileArgs = (
     "Pod::Elemental::Transformer::List" => 0,
     "namespace::autoclean" => 0
   },
-  "VERSION" => "0.3",
+  "VERSION" => "0.4",
   "test" => {
     "TESTS" => "t/*.t"
   }

@@ -3,7 +3,7 @@ NAME
     your dist
 
 VERSION
-    version 0.3
+    version 0.4
 
 SYNOPSIS
     Loads the stuff I find myself using all the time. Currently equivalent
@@ -29,9 +29,10 @@ SYNOPSIS
         [MetaJSON]
         [GithubMeta]
         [Repository]
-        github_http = 0
         [InstallGuide]
-        [ReadmeFromPod]
+        [ReadmeMarkdownFromPod]
+        [CopyFilesFromBuild]
+        copy = README.mkdn
         [ExtraTests]
         [PodCoverageTests]
         [PodSyntaxTests]
@@ -39,6 +40,8 @@ SYNOPSIS
         [Test::Compile]
         [Test::Kwalitee]
         [Twitter]
+        [Git::Commit]
+        [Git::Tag]
         [ArchiveRelease]
         [InstallRelease]
         [NextRelease]
