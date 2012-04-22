@@ -1,6 +1,6 @@
 package Dist::Zilla::PluginBundle::GENEHACK;
 {
-  $Dist::Zilla::PluginBundle::GENEHACK::VERSION = '0.4';
+  $Dist::Zilla::PluginBundle::GENEHACK::VERSION = '0.5';
 }
 BEGIN {
   $Dist::Zilla::PluginBundle::GENEHACK::AUTHORITY = 'cpan:GENEHACK';
@@ -171,7 +171,7 @@ Dist::Zilla::PluginBundle::GENEHACK - BeLike::GENEHACK when you zilla your dist
 
 =head1 VERSION
 
-version 0.4
+version 0.5
 
 =head1 SYNOPSIS
 

@@ -56,7 +56,7 @@ resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-PluginBundle-GENEHACK
   homepage: http://search.cpan.org/dist/Dist-Zilla-PluginBundle-GENEHACK/
   repository: git://github.com/genehack/dist-zilla-pluginbundle-genehack.git
-version: 0.4
+version: 0.5
 x_Dist_Zilla:
   plugins:
     -
@@ -184,9 +184,13 @@ x_Dist_Zilla:
       name: '@GENEHACK/InstallGuide'
       version: 1.101461
     -
-      class: Dist::Zilla::Plugin::ReadmeFromPod
-      name: '@GENEHACK/ReadmeFromPod'
-      version: 0.16
+      class: Dist::Zilla::Plugin::ReadmeMarkdownFromPod
+      name: '@GENEHACK/ReadmeMarkdownFromPod'
+      version: 0.120120
+    -
+      class: Dist::Zilla::Plugin::CopyFilesFromBuild
+      name: '@GENEHACK/CopyFilesFromBuild'
+      version: 0.103510
     -
       class: Dist::Zilla::Plugin::NextRelease
       name: '@GENEHACK/NextRelease'
@@ -219,6 +223,14 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::Twitter
       name: '@GENEHACK/Twitter'
       version: 0.015
+    -
+      class: Dist::Zilla::Plugin::Git::Commit
+      name: '@GENEHACK/Git::Commit'
+      version: 1.121010
+    -
+      class: Dist::Zilla::Plugin::Git::Tag
+      name: '@GENEHACK/Git::Tag'
+      version: 1.121010
     -
       class: Dist::Zilla::Plugin::InstallRelease
       name: '@GENEHACK/InstallRelease'

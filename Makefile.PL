@@ -60,7 +60,7 @@ my %WriteMakefileArgs = (
     "Pod::Elemental::Transformer::List" => 0,
     "namespace::autoclean" => 0
   },
-  "VERSION" => "0.4",
+  "VERSION" => "0.5",
   "test" => {
     "TESTS" => "t/*.t"
   }
