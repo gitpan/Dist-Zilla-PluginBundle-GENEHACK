@@ -1,11 +1,11 @@
 
 
 This archive contains the distribution Dist-Zilla-PluginBundle-GENEHACK,
-version 0.5:
+version 0.6:
 
   BeLike::GENEHACK when you zilla your dist
 
-This software is copyright (c) 2010 by John SJ Anderson.
+This software is copyright (c) 2012 by John SJ Anderson.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

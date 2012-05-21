@@ -1,8 +1,16 @@
 Changes file for Dist-Zilla-PluginBundle-GENEHACK
 
+0.6       2012-05-21 06:28:13 America/New_York
+
+   * Munge DZP::Git::NextVersion first_version
+   * Properly add DZP::CopyFilesFromBuild
+   * Add Pod::Weaver::Plugin::Encoding prereq
+   * update copyright year
+   * Remove Kwalitte stuff
+
 0.5       2012-04-22 15:43:08 America/New_York
 
-    * Bogus release, testing twitter integration... 
+    * Bogus release, testing twitter integration...
 
 0.4       2012-04-22 15:40:16 America/New_York
 

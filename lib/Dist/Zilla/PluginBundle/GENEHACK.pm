@@ -1,6 +1,6 @@
 package Dist::Zilla::PluginBundle::GENEHACK;
 {
-  $Dist::Zilla::PluginBundle::GENEHACK::VERSION = '0.5';
+  $Dist::Zilla::PluginBundle::GENEHACK::VERSION = '0.6';
 }
 BEGIN {
   $Dist::Zilla::PluginBundle::GENEHACK::AUTHORITY = 'cpan:GENEHACK';
@@ -21,6 +21,7 @@ use Dist::Zilla::Plugin::Authority;
 use Dist::Zilla::Plugin::AutoPrereqs;
 use Dist::Zilla::Plugin::Bugtracker;
 use Dist::Zilla::Plugin::CheckChangesHasContent;
+use Dist::Zilla::Plugin::CopyFilesFromBuild;
 use Dist::Zilla::Plugin::EOLTests;
 use Dist::Zilla::Plugin::ExtraTests;
 use Dist::Zilla::Plugin::Git::NextVersion;
@@ -40,7 +41,6 @@ use Dist::Zilla::Plugin::ReadmeMarkdownFromPod;
 use Dist::Zilla::Plugin::Repository;
 use Dist::Zilla::Plugin::TaskWeaver;
 use Dist::Zilla::Plugin::Test::Compile;
-use Dist::Zilla::Plugin::Test::Kwalitee;
 use Dist::Zilla::Plugin::Twitter;
 
 has is_task => (
@@ -57,10 +57,10 @@ sub configure {
 
   $self->add_plugins(
     # auto-versioning from git
-    [ 'Git::NextVersion' => { first_version => '0.1' } ],
+    [ 'Git::NextVersion' => { first_version => '0.01' } ],
   );
 
-  $self->add_bundle('Basic' );
+  $self->add_bundle('Basic');
 
   ## PLUGINS WHAT MUNGE MAKEFILE
   $self->add_plugins(
@@ -138,7 +138,6 @@ sub configure {
     # oh, so very good
     'EOLTests' ,
     'Test::Compile' ,
-    'Test::Kwalitee' ,
   );
 
   ## PLUGINS WHAT DO STUFF
@@ -171,7 +170,7 @@ Dist::Zilla::PluginBundle::GENEHACK - BeLike::GENEHACK when you zilla your dist
 
 =head1 VERSION
 
-version 0.5
+version 0.6
 
 =head1 SYNOPSIS
 
@@ -207,7 +206,6 @@ this:
     [PodSyntaxTests]
     [EOLTests]
     [Test::Compile]
-    [Test::Kwalitee]
     [Twitter]
     [Git::Commit]
     [Git::Tag]
@@ -223,7 +221,7 @@ John SJ Anderson <genehack@genehack.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by John SJ Anderson.
+This software is copyright (c) 2012 by John SJ Anderson.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
